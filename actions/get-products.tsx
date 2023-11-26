@@ -1,5 +1,5 @@
 import { Product } from "@/types";
-import queryString from "query-string";
+import qs from "query-string";
 
 const URL = `${process.env.NEXT_PUBLIC_API_URL}/products`;
 
@@ -11,7 +11,7 @@ interface Query {
 }
 
 const getProducts = async (query: Query): Promise<Product[]> => {
-    const url = queryString.stringifyUrl({
+    const url = qs.stringifyUrl({
         url: URL,
         query: {
             colorId: query.colorId,
